@@ -43,8 +43,7 @@ camera.position.copy( center ).add( offset );
 controls.target.copy( center );
 controls.update();
 
-
-uiOverlay.updateAC1Altitude( 12345 );
+let testValue = 0;
 
 //---------------------------------------------------------------------
 
@@ -52,6 +51,10 @@ uiOverlay.updateAC1Altitude( 12345 );
 function animate() {
 
 	requestAnimationFrame(animate);
+
+	testValue += 1;
+
+	uiOverlay.updateAC1Altitude( testValue );
 
     renderSetup.Render();
 
