@@ -1,7 +1,7 @@
 import * as THREE from "three";
-import Stats from "three/addons/libs/stats.module.js";
+import { WebGPURenderer } from 'three/webgpu';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 
 
 class RendererSetup {
@@ -14,7 +14,7 @@ class RendererSetup {
 		this.width = window.innerWidth;
 		this.height = window.innerHeight;
 
-		this.renderer = new THREE.WebGPURenderer({
+		this.renderer = new WebGPURenderer({
 
 			canvas: document.createElement('canvas'),
 			antialias: true,
