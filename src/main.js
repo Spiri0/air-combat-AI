@@ -20,9 +20,11 @@ const camera = renderSetup.camera;
 const uiCamera = renderSetup.uiCamera;
 const controls = renderSetup.controls;
 
+await renderer.init();
+
 window.addEventListener('resize', renderSetup.onWindowResize, false);
 
-//-----------------------
+//---------------------------------------------------------------------
 
 
 const uiOverlay = new UIOverlay(uiScene, width, height);
@@ -44,7 +46,7 @@ controls.update();
 
 uiOverlay.updateAC1Altitude( 12345 );
 
-//-----------------------
+//---------------------------------------------------------------------
 
 
 function animate() {

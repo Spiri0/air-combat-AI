@@ -2,16 +2,18 @@ import * as THREE from "three";
 
 
 class Grid {
+
 	constructor(scene, options = {}) {
+
 		this.scene = scene;
 
-		// Standardparameter
 		this.gridSize = options.gridSize || 1609.33; // 1 mile in meters
 		this.rc = options.rc || 500;
 		this.color = options.color || 0x009900;
 
 		this.gridObj = new THREE.LineSegments(this.createGeometry(), this.createMaterial());
 		this.scene.add(this.gridObj);
+
 	}
 
 	createGeometry() {
@@ -35,7 +37,6 @@ class Grid {
 		return new THREE.LineBasicMaterial({ color: this.color });
 	}
 
-	// Optional: Getter für das Grid-Objekt, falls außerhalb benötigt
 	getObject() {
 		return this.gridObj;
 	}

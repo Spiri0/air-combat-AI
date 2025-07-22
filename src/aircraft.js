@@ -2,11 +2,13 @@ import * as THREE from "three";
 
 
 class Aircraft {
+
 	constructor(scene, color = "blue", options = {}) {
+
 		this.scene = scene;
 		this.color = color;
 
-		// Optionen mit Defaults
+
 		this.position = this.position = new THREE.Vector3(options.position?.x || 0, options.position?.y || 0, options.position?.z || 0);
 		this.speed = options.speed || 0;
 
@@ -14,7 +16,6 @@ class Aircraft {
 		this.euler = new THREE.Vector3();
 		this.direction = new THREE.Vector3();
 
-		// Hauptobjekte
 		this.AirObj = new THREE.Group();
 		this.AirObj.rotation.order = "YXZ";
 		this.scene.add(this.AirObj);
@@ -23,10 +24,8 @@ class Aircraft {
 		this.AirPBY.rotation.order = "YXZ";
 		this.AirObj.add(this.AirPBY);
 
-		// Geometrie erstellen
 		this.createGeometry();
 
-		// Initialposition setzen inkl. Höhe (y)
 		this.AirObj.position.set(this.position.x, options.altitude || this.position.y, this.position.z);
 
 		if (options.direction) {
@@ -34,6 +33,7 @@ class Aircraft {
 		} else {
 			this.setRotation(0, 0, 0);
 		}
+
 	}
 
 	createGeometry() {
@@ -72,7 +72,7 @@ class Aircraft {
 		mshAir.position.z = 25;
 		this.AirPBY.add(mshAir);
 
-		// Skalierung
+		// Scale
 		this.AirPBY.scale.set(Ft2Mtr, Ft2Mtr, Ft2Mtr);
 	}
 

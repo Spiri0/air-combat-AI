@@ -1,10 +1,10 @@
 import * as THREE from "three";
-        
+
 
 const gridOptions = { 
-    gridSize: 1000/1.60933, 
-    rc: 5000, 
-    color: 0x009900 
+	gridSize: 1000/1.60933, 
+	rc: 5000, 
+	color: 0x009900 
 }
 
 const air1Direction = new THREE.Quaternion();
