@@ -14,16 +14,13 @@ class RendererSetup {
 		this.width = window.innerWidth;
 		this.height = window.innerHeight;
 
-		//this.renderer = new THREE.WebGPURenderer( { antialias: true } );
-
 		this.renderer = new THREE.WebGPURenderer({
 
 			canvas: document.createElement('canvas'),
 			antialias: true,
-			forceWebGL: false,
+			//forceWebGL: false,
 				
 		});
-
 
 		this.renderer.setSize( this.width, this.height );
 		document.body.appendChild( this.renderer.domElement );
