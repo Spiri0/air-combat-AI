@@ -1,7 +1,7 @@
 import * as THREE from "three";
-import Stats from "three/addons/libs/stats.module.js";
+import { WebGPURenderer } from 'three/webgpu';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
+import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 
 
 class RendererSetup {
@@ -14,7 +14,7 @@ class RendererSetup {
 		this.width = window.innerWidth;
 		this.height = window.innerHeight;
 
-		this.renderer = new THREE.WebGPURenderer({
+		this.renderer = new WebGPURenderer({
 
 			canvas: document.createElement('canvas'),
 			antialias: true,
@@ -43,7 +43,6 @@ class RendererSetup {
 		this.uiCamera = new THREE.OrthographicCamera( 0, this.width, this.height, 0, -1000, 1000 );
 
 		//this.camera.position.set( 0, 5, 10 );
-		//this.camera.lookAt( 0,0,0 );
 
 		this.controls = new OrbitControls( this.camera, this.renderer.domElement );
 		this.controls.target.set( 0, 0, 0 );
